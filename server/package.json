@@ -1,0 +1,14 @@
+{
+  "name": "anon-messenger-server",
+  "version": "0.1.0",
+  "description": "Relay for anonymous username-only messenger",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --no-warnings --test test/*.test.js"
+  },
+  "dependencies": {
+    "ws": "^8.23.0"
+  },
+  "private": true
+}

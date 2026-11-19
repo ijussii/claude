@@ -1,0 +1,39 @@
+name: AnonMessenger
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+packages:
+  WebRTC:
+    url: https://github.com/stasel/WebRTC.git
+    from: "158.0.0"
+targets:
+  AnonMessenger:
+    type: application
+    platform: iOS
+    sources:
+      - AnonMessenger
+    dependencies:
+      - package: WebRTC
+    info:
+      path: AnonMessenger/Info.plist
+      properties:
+        CFBundleDisplayName: Anon
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSMicrophoneUsageDescription: Anon uses the microphone for voice calls.
+        NSLocalNetworkUsageDescription: Anon connects to your messaging server and to peers for calls.
+        UIBackgroundModes:
+          - audio
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.anon
+        SWIFT_VERSION: "5.0"
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
